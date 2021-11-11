@@ -1,0 +1,11 @@
+type Mensaje
+@model
+@auth(
+  rules: [
+    { allow: private }
+  ]
+) {
+  id: ID!
+  propietario: String!
+  mensaje: String!
+}
