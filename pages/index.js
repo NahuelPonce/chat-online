@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styles from '../styles/Home.module.css';
-import { withAuthenticator } from '@aws-amplify/ui-react';
+import { withAuthenticator, AmplifySignOut } from '@aws-amplify/ui-react';
 import { API, Auth, withSSRContext, graphqlOperation } from "aws-amplify";
 import { listMensajes } from "../src/graphql/queries";
 import { createMensaje } from "../src/graphql/mutations";
@@ -78,6 +78,7 @@ function Home({ mensajes }) {
   if (usuario) {
     return (
       <div className={styles.background}>
+            <AmplifySignOut />
         <div className={styles.container}>
           <h1 className={styles.title}> Chat Online</h1>
           <div className={styles.chatbox}>
